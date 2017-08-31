@@ -1,0 +1,72 @@
+body{
+  background: #e7eaea;
+}
+#main{
+
+}
+.site-main{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  h1.entry-title{
+    color: #729190;
+    font: 400 1.5rem/1.5rem Montserrat;
+    margin-bottom: 20px;
+  }
+  .page-numbers{
+    display: block;
+    li{
+      display: inline;
+      &>a:focus, &>a:hover{
+        outline: none;
+        z-index: 3;
+        color: #506766;
+        background-color: #eeeeee;
+        border-color: #ddd;
+      }
+      &>a, &>span{
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        line-height: 1.42857;
+        text-decoration: none;
+        color: #729190;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin-left: -1px;
+      }
+    }
+  }
+
+}
+.entry-content{
+  text-align: justify;
+  ol>li, ul>li{
+    font: 400 1rem/1.1rem $mont;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: justify;
+    &:last-child{
+      margin-bottom: 20px;
+    }
+  }
+  strong{
+    margin-top: 10px;
+    font-weight: 600;
+  }
+  ul{
+    list-style-type: disc;
+  }
+  ol{
+    list-style-type: decimal;
+  }
+  h4{
+    text-align: justify;
+    margin-bottom: 15px;
+    font: 500 1.2rem/1.2rem $mont;
+  }
+  p{
+    text-align: justify;
+    margin: 5px 0;
+    font: 400 1rem/1.3rem $mont;
+  }
+}

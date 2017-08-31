@@ -1,0 +1,26 @@
+.front-content{
+  background: rgba(0,0,0,0.5);
+  padding-top: 25px;
+  padding-bottom: 15px;
+  font: 400 0.9rem/1rem $mont;
+  color: #ffffff;
+  .front-link-wrapper{
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 6px;
+    a{
+      font: 600 0.9rem/1rem $mont;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding: 6px;
+      outline: none;
+      border: 2px solid #ffffff;
+      border-radius: 0;
+      transition: all ease 0.5s;
+      &:hover{
+        border-color: #3e3e3e;
+      }
+    }
+  }
+}

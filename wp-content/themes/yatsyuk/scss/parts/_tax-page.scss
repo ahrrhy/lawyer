@@ -1,0 +1,66 @@
+.entry-header{
+  text-align: center;
+  .entry-title{
+    color: #729190;
+    font: 400 1.5rem/1.5rem $mont;
+  }
+  .tax-description{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font: 400 1.1rem/1.2rem $mont;
+    color: #4b565f;
+  }
+}
+
+
+
+
+/******************
+  Blog Template
+******************/
+
+
+.cases-list{
+  li{
+    .circumstances{
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+    margin-bottom: 20px;
+    padding: 15px 0;
+  }
+  .post-publish-date{
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 20px;
+    span{
+      border-bottom: 3px solid #cbd4d6;
+      line-height: 1.5rem;
+      font-weight: 600;
+      padding-bottom: 8px;
+      color: #40809b;
+    }
+    &:before{
+      position: absolute;
+      width: 100%;
+      content: "";
+      bottom: -5px;
+      border-top: 1px solid #cbd4d6;
+    }
+  }
+  .cases-item{
+    .cases-wrap{
+      h3{
+        font: 500 1.3rem/1.4rem $mont;
+        a{
+          color: $header;
+        }
+      }
+      p{
+         font: 500 1rem/1.1rem $mont;
+       }
+    }
+  }
+}

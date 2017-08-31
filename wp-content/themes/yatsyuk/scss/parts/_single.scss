@@ -1,0 +1,19 @@
+main.single{
+  font: 400 1rem/1rem $mont;
+  color: #4b565f;
+  h1, h2, h3, h4, h5, h6{
+    span{
+      text-transform: uppercase;
+    }
+  }
+  p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  img{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+
