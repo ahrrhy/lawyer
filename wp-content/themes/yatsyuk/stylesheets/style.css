@@ -260,6 +260,8 @@ body {
 footer {
   font: 400 1rem/1.5 Montserrat;
   color: #4b565f; }
+  footer iframe {
+    width: 100%; }
   footer .contact-info-header {
     text-transform: uppercase;
     position: relative;

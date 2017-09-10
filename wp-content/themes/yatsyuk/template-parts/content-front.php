@@ -9,7 +9,7 @@
 
 ?>
 
-<article class="container" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class("container"); ?> >
     <div class="row justify-content-center">
         <div class="entry-content col-sm-8 text-center">
             <?php

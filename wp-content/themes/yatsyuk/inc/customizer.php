@@ -213,6 +213,25 @@ function control_custom_header_settings ($wp_customize){
             'type' => 'text',
         )
     );
+
+
+    /**
+     *  Adding circumstances word before the Cases-Header
+     */
+
+    $wp_customize->add_section('jivo_chat', array(
+        'title' => 'Сюди потрібно вставити код з JivoChat'
+    ));
+
+    $wp_customize->add_setting('jivo_chat_code');
+
+    $wp_customize->add_control('jivo_chat_code',
+        array(
+            'label' => 'Текст перед заголовком Справи',
+            'section' => 'jivo_chat',
+            'type' => 'text',
+        )
+    );
 }
 add_action( 'customize_register', 'control_custom_header_settings' );
 

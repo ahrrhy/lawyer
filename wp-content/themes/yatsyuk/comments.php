@@ -138,7 +138,7 @@ function sage_comment($comment, $args, $depth) {
             global $post; ?>
             <li class="media">
                         <a href="<?php echo $comment->comment_author_url;?>" class="d-flex mr-3">
-                            <?php echo get_avatar($comment, 96); ?>
+
                         </a>
                     <div class="media-body">
                         <h4 class="mt-0 mb-1 comment-author-name">

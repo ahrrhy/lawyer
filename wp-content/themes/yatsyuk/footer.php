@@ -21,9 +21,9 @@
                 <div class="row">
 
                     <address class="contact-info col-sm-6">
-                        <h4 class="contact-info-header">
+                        <p class="contact-info-header">
                             <span><?php echo get_theme_mod('contacts_footer'); ?></span>
-                        </h4>
+                        </p>
                         <div class="row">
                                 <ul class="contact-list col-sm-5">
                                     <?php $options = get_option( 'theme_settings' ); ?>
@@ -91,7 +91,7 @@
                         <?php if($options['footer']) { // выводим то что написал пользователь?>
                             <p><?php echo $options['footer']; ?></p>
                         <?php } else { // или текст по умолчанию ?>
-                            <p>&copy; <?php echo date('Y'); ?> <a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo( 'name' ) ?></a>. Усі права захищені. Використання матеріалів дозволяється тільки з використанням посилання на джерело</p>
+                            <p>&copy; <?php echo date('Y'); ?> <a href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>"><?php bloginfo( 'name' ) ?></a>. Усі права захищені. Використання матеріалів дозволяється тільки з використанням посилання на джерело</p>
                         <?php } ?>
 
                     </div>

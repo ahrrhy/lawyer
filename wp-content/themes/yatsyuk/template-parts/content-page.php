@@ -9,7 +9,7 @@
 
 ?>
 
-<article class="container" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class("container"); ?> >
         <div class="entry-content">
             <?php
             the_content();
