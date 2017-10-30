@@ -16,8 +16,6 @@
         if (! is_home()){
             $args = array(
                 'post_type' => 'cases',
-                'orderby' => 'date',
-                'order' => 'ASC',
                 'paged' => $paged,
             );
             $tax_query = new WP_Query($args); ?>
@@ -34,10 +32,11 @@
                             'alt' => 'photo')); ?>
                         <div class="media-body cases-wrap">
                             <h3 class="mt-0 mb-1">
-                                <a href="<?php echo get_permalink(); ?>"><?php the_title();?></a>
+                                <a class="heading-link" href="<?php echo get_permalink(); ?>"><?php the_title();?></a>
                             </h3>
                             <?php
                             the_excerpt(); ?>
+                            <p class="cases-date"><?php the_date(); ?></p>
                         </div>
 
                     </div>
@@ -71,7 +70,7 @@
                             'alt' => 'photo')); ?>
                         <div class="media-body cases-wrap">
                             <h3 class="mt-0 mb-1">
-                                <a href="<?php echo get_permalink(); ?>"><?php the_title();?></a>
+                                <a class="heading-link" href="<?php echo get_permalink(); ?>"><?php the_title();?></a>
                             </h3>
                             <?php
                             the_excerpt(); ?>

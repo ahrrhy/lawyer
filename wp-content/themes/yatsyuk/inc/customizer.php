@@ -14,10 +14,167 @@ function yatsyuk_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+    if ( isset( $wp_customize->selective_refresh ) ) {
+        $wp_customize->selective_refresh->add_partial( 'blogname', array(
+            'selector'        => '.site-title a',
+            'render_callback' => 'yatsyuk_customize_partial_blogname',
+        ) );
+        $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+            'selector'        => '.site-description',
+            'render_callback' => 'yatsyuk_customize_partial_blogdescription',
+        ) );
+    }
 }
 add_action( 'customize_register', 'yatsyuk_customize_register' );
 
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
+ */
+function yatsyuk_customize_partial_blogname() {
+    bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @return void
+ */
+function tashastudio_customize_partial_blogdescription() {
+    bloginfo( 'description' );
+}
+
 function control_custom_header_settings ($wp_customize){
+
+    /**
+     * Adding color to Cases Headers
+     */
+    $wp_customize->add_section('heading_links_color', array(
+        'title' => 'Налаштування кольору заголовків справ та статтей'
+    ));
+    $wp_customize->add_setting('heading_color', array(
+        'default' => '#d5d0ca',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heading_color', array(
+        'label' => __('Колір заголовків справ та статтей', 'yatsyuk'),
+        'section' => 'heading_links_color',
+        'settings' => 'heading_color',
+    ) ) );
+    /**
+     * Adding color to Posts dates
+     */
+    $wp_customize->add_setting('date_color', array(
+        'default' => '#40809b',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'date_color', array(
+        'label' => __('Колір дати справ та статтей', 'yatsyuk'),
+        'section' => 'heading_links_color',
+        'settings' => 'date_color',
+    ) ) );
+    /**
+     * Adding border color to Posts dates
+     */
+    $wp_customize->add_setting('date_border_color', array(
+        'default' => '#cbd4d6',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'date_border_color', array(
+        'label' => __('Колір ліній дати справ та статтей', 'yatsyuk'),
+        'section' => 'heading_links_color',
+        'settings' => 'date_border_color',
+    ) ) );
+
+
+
+    /**
+     * Adding body bg color
+     */
+    $wp_customize->add_section('body_bg', array(
+        'title' => 'Налаштування кольору фону сайту сторінки'
+    ));
+    $wp_customize->add_setting('body_bg_color', array(
+        'default' => '#d5d0ca',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_bg_color', array(
+        'label' => __('Колір Посилань Головного Меню', 'yatsyuk'),
+        'section' => 'body_bg',
+        'settings' => 'body_bg_color',
+    ) ) );
+
+    /**
+     * Adding custom Backgrounds For DIFFERENT pages
+     */
+    $wp_customize->add_section('pages_bg', array(
+        'title' => 'Налаштування фону різних сторінок сайту'
+    ));
+
+    $wp_customize->add_setting('about_page_bg');
+
+    //bg in about_page
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'about_page_bg', array(
+        'label' => 'Фон сторінки Про адвоката',
+        'section' => 'pages_bg',
+        'settings' => 'about_page_bg',
+        'width' => '2500',
+        'height' => '1500'
+    )));
+
+    $wp_customize->add_setting('blog_page_bg');
+
+    //bg in blog page
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'blog_page_bg', array(
+        'label' => 'Фон сторінки Блог',
+        'section' => 'pages_bg',
+        'settings' => 'blog_page_bg',
+        'width' => '2500',
+        'height' => '1500'
+    )));
+
+    $wp_customize->add_setting('practice_page_bg');
+
+    //bg in practice page
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'practice_page_bg', array(
+        'label' => 'Фон сторінки Судова практика',
+        'section' => 'pages_bg',
+        'settings' => 'practice_page_bg',
+        'width' => '2500',
+        'height' => '1500'
+    )));
+
+    $wp_customize->add_setting('price_page_bg');
+
+    //bg in practice page
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'price_page_bg', array(
+        'label' => 'Фон сторінки Порядок та вартість',
+        'section' => 'pages_bg',
+        'settings' => 'price_page_bg',
+        'width' => '2500',
+        'height' => '1500'
+    )));
+
+    $wp_customize->add_setting('consult_page_bg');
+
+    //bg in practice page
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'consult_page_bg', array(
+        'label' => 'Фон сторінки Консультації',
+        'section' => 'pages_bg',
+        'settings' => 'consult_page_bg',
+        'width' => '2500',
+        'height' => '1500'
+    )));
+
+
+
     /**
      * Adding custom Banner
      */
@@ -37,6 +194,34 @@ function control_custom_header_settings ($wp_customize){
         'height' => '856'
         )));
 
+    /**
+     * Adding custom Information to Front-Page Before Navigation
+     */
+    $wp_customize->add_setting('site_main_title');
+
+    $wp_customize->add_control('site_main_title',
+        array(
+            'label' => 'Введіть Заголовок перед Меню',
+            'section' => 'header_section',
+            'type' => 'text',
+        )
+    );
+
+    /**
+     * Add logo to front header
+     */
+    $wp_customize->add_setting('logo');
+
+    //banner in all pages except front
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'logo', array(
+        'label' => 'Логотип',
+        'section' => 'header_section',
+        'settings' => 'logo',
+        'width' => '2500',
+        'height' => '856'
+    )));
+
 
     /**
      * Adding custom Navigation Links Color
@@ -54,12 +239,12 @@ function control_custom_header_settings ($wp_customize){
 
     //border color
     $wp_customize->add_setting('control_border_color', array(
-        'default' => '#d90c00',
+        'default' => '#ffffff',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'control_border_color_control', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'control_border_color', array(
         'label' => __('Border and Hover Color', 'yatsuyk'),
-        'section' => 'control_custom_header_settings_section',
+        'section' => 'header_section',
         'settings' => 'control_border_color',
     ) ) );
 
@@ -75,9 +260,23 @@ function control_custom_header_settings ($wp_customize){
         'label' => 'Фонове зображення на головній сторінці',
         'section' => 'front_page',
         'settings' => 'background_front',
-        'width' => '2380',
-        'height' => '1770'
+        'width' => '2500',
+        'height' => '856'
     )));
+
+
+    /**
+     * Adding checkbox to display front-page content
+     */
+    $wp_customize->add_setting('content_front_hide');
+
+    $wp_customize->add_control('content_front_hide',
+        array(
+            'label' => 'Показувати контент головної сторінки?',
+            'section' => 'front_page',
+            'type' => 'checkbox',
+        )
+    );
 
     /**
      * Adding custom Information to Front-Page
@@ -214,7 +413,6 @@ function control_custom_header_settings ($wp_customize){
         )
     );
 
-
     /**
      *  Adding circumstances word before the Cases-Header
      */
@@ -240,25 +438,88 @@ function control_customize_css() {
     global $post;
     if ( $post->post_name == home ) { ?>
         <style type="text/css">
-            body{
-                background: url("<?php echo wp_get_attachment_url(get_theme_mod('background_front')); ?>") center/cover no-repeat scroll;
+            header.site-header{
+                background: url("<?php echo wp_get_attachment_url(get_theme_mod('background_front')); ?>") center/cover no-repeat;
             }
             @media screen and (min-width: 768px){
-                body{
-                    background: url("<?php echo wp_get_attachment_url(get_theme_mod('background_front')); ?>") left top/cover no-repeat scroll;
+                header.site-header{
+                    background: url("<?php echo wp_get_attachment_url(get_theme_mod('background_front')); ?>") center/cover no-repeat scroll;
                 }
             }
         </style>
         <?php
+        //control_border_color
     } ?>
     <style type="text/css">
+        /* make different backgrounds */
+        div.practice{
+            background: url("<?php echo wp_get_attachment_url(get_theme_mod('about_page_bg')); ?>") center/cover no-repeat;
+        }
+        @media screen and (min-width: 768px){
+            div.practice{
+                background: url("<?php echo wp_get_attachment_url(get_theme_mod('about_page_bg')); ?>") center/cover no-repeat;
+            }
+        }
+        div.about{
+            background: url("<?php echo wp_get_attachment_url(get_theme_mod('about_page_bg')); ?>") center/cover no-repeat;
+        }
+        @media screen and (min-width: 768px){
+            div.about{
+                background: url("<?php echo wp_get_attachment_url(get_theme_mod('about_page_bg')); ?>") center/cover no-repeat;
+            }
+        }
+        div.blog{
+            background: url("<?php echo wp_get_attachment_url(get_theme_mod('blog_page_bg')); ?>") center/cover no-repeat;
+        }
+        @media screen and (min-width: 768px){
+            div.blog{
+                background: url("<?php echo wp_get_attachment_url(get_theme_mod('blog_page_bg')); ?>") center/cover no-repeat;
+            }
+        }
+        div.price{
+            background: url("<?php echo wp_get_attachment_url(get_theme_mod('price_page_bg')); ?>") center/cover no-repeat;
+        }
+        @media screen and (min-width: 768px){
+            div.price{
+                background: url("<?php echo wp_get_attachment_url(get_theme_mod('price_page_bg')); ?>") center/cover no-repeat;
+            }
+        }
+        div.consult{
+            background: url("<?php echo wp_get_attachment_url(get_theme_mod('consult_page_bg')); ?>") center/cover no-repeat;
+        }
+        @media screen and (min-width: 768px){
+            div.consult{
+                background: url("<?php echo wp_get_attachment_url(get_theme_mod('consult_page_bg')); ?>") center/cover no-repeat;
+            }
+        }
+
+        .cases-list .post-publish-date span {
+            color: <?php echo get_theme_mod('date_color') ?>;
+        }
+
+        .cases-list .post-publish-date span, .cases-list .post-publish-date:before{
+            border-color: <?php echo get_theme_mod('date_border_color') ?>;
+        }
+
+        .heading-link{
+            color: <?php echo get_theme_mod('heading_color')?>;
+        }
+        body{
+            background: <?php echo get_theme_mod('body_bg_color') ?>;
+        }
         .front-header{
-            background: url("<?php echo wp_get_attachment_url(get_theme_mod('banner_front')); ?>") center/cover no-repeat;
+            background: url("<?php echo wp_get_attachment_url(get_theme_mod('background_front')); ?>") center/cover no-repeat;
+        }
+        .navbar .navbar-nav a:hover, .navbar-light .navbar-toggler, header .navbar ul, header .navbar .navbar-nav .active, .navbar{
+            border-color: <?php echo get_theme_mod('control_border_color'); ?>;
+        }
+        .header .navbar .navbar-toggleable-md .navbar-light .bg-faded p.site-title:hover, .phone-wrapper span a:hover{
+            color: <?php echo get_theme_mod('control_border_color'); ?>;
         }
         .other-header{
             background: url("<?php echo wp_get_attachment_url(get_theme_mod('banner_other')); ?>") center/cover no-repeat;
         }
-        .navbar .navbar-nav a, .navbar-light .site-title, .site-description, .phone-wrapper, .page-title{
+        .navbar .navbar-nav a, .navbar-light .site-title, .site-description, .phone-wrapper, .phone-wrapper span a, .page-title{
             color: <?php echo get_theme_mod('navigation_links_color'); ?> ;
         }
         .site-footer{

@@ -50,6 +50,11 @@ footer{
 }
 .contact-list-phone{
   .phone-item{
+    transition: ease all 0.3s;
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
     &:before{
       content: "\f098"; /* FontAwesome Unicode */
       font-family: FontAwesome;
@@ -57,11 +62,21 @@ footer{
     }
   }
   .mail-item{
+    transition: ease all 0.3s;
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
     &:before{
       content: "\f0e0"; /* FontAwesome Unicode */
       font-family: FontAwesome;
       margin-right: 2px;
     }
+  }
+  .phone-item:hover, .mail-item:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari */
+    transform: scale(1.1); /* Standard syntax */
   }
 }
 .site-footer{

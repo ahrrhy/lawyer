@@ -33,9 +33,7 @@
                     echo $args['before_title'] . $title . $args['after_title'];
 
         // This is where you run the code and display the output
-                echo '
-                            <h4 class="contact-info-header"><span><?php echo get_theme_mod(\'practice_footer\'); ?></span></h4>
-                            <ul class="col-12 tax-list minus-padding">';
+                echo '<ul class="col-12 tax-list minus-padding">';
                 $args = array(
                                     'taxonomy'     => 'servicescat',
                                     'orderby'      => 'name',
@@ -45,7 +43,8 @@
                                 );
                                 wp_list_categories( $args );
 
-               echo ' </ul>';
+               echo ' </ul>
+                     </section>';
                 echo $args['after_widget'];
             }
 

@@ -45,19 +45,24 @@
                                 </ul>
                                 <ul class="contact-list-phone col-sm-7">
                                     <?php if ($options['phone_kiiv']){ ?>
-                                        <li class="phone-item"><?php echo $options['phone_kiiv']; ?></li>
+                                        <li class="phone-item"><a
+                                                    href="tel:<?php echo $options["phone_kiiv"]; ?>"><?php echo $options['phone_kiiv']; ?></a></li>
                                     <?php } ?>
                                     <?php if ($options['phone_life']){ ?>
-                                        <li class="phone-item"><?php echo $options['phone_life']; ?></li>
+                                        <li class="phone-item"><a
+                                                    href="tel:<?php echo $options["phone_life"]; ?>"><?php echo $options['phone_life']; ?></a></li>
                                     <?php } ?>
                                     <?php if ($options['phone_voda']){ ?>
-                                        <li class="phone-item"><?php echo $options['phone_voda']; ?></li>
+                                        <li class="phone-item"><a
+                                                    href="tel:<?php echo $options["phone_voda"]; ?>"><?php echo $options['phone_voda']; ?></a></li>
                                     <?php } ?>
                                     <?php if ($options['phone_office']){ ?>
-                                        <li class="phone-item"><?php echo $options['phone_office']; ?></li>
+                                        <li class="phone-item"><a
+                                                    href="tel:<?php echo $options["phone_office"]; ?>"><?php echo $options['phone_office']; ?></a></li>
                                     <?php } ?>
                                     <?php if ($options['contact_mail']){ ?>
-                                        <li class="mail-item"><?php echo $options['contact_mail']; ?></li>
+                                        <li class="mail-item"><a
+                                                    href="mailto:<?php echo $options["contact_mail"]; ?>"><?php echo $options['contact_mail']; ?></a></li>
                                     <?php } ?>
 
                                 </ul>

@@ -31,8 +31,9 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
-        'libs/jquery/dist/jquery.min.js', // Берем jQuery
-        'libs/bootstrap/dist/js/bootstrap.min.js'// Бутстрап
+        'libs/jquery/dist/jquery.js', // Берем jQuery
+        'libs/tether/dist/js/tether.js',
+        'libs/bootstrap/dist/js/bootstrap.js'// Бутстрап
         //'libs/slick/slick.min.js', // Слайдер
         //'libs/flexslider/jquery.flexslider-min.js'
 

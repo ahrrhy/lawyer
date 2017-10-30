@@ -22,6 +22,9 @@
 
 .cases-list{
   li{
+    .cases-date{
+      margin-top: 10px;
+    }
     .circumstances{
       font-weight: 600;
       font-size: 1.1rem;
@@ -36,27 +39,25 @@
     position: relative;
     margin-bottom: 20px;
     span{
-      border-bottom: 3px solid #cbd4d6;
+      border-bottom-width: 3px;//#cbd4d6
+      border-bottom-style: solid;
       line-height: 1.5rem;
       font-weight: 600;
       padding-bottom: 8px;
-      color: #40809b;
     }
     &:before{
       position: absolute;
       width: 100%;
       content: "";
       bottom: -5px;
-      border-top: 1px solid #cbd4d6;
+      border-top-width: 1px;// #cbd4d6;
+      border-top-style: solid;
     }
   }
   .cases-item{
     .cases-wrap{
       h3{
         font: 500 1.3rem/1.4rem $mont;
-        a{
-          color: $header;
-        }
       }
       p{
          font: 500 1rem/1.1rem $mont;

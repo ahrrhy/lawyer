@@ -1,10 +1,9 @@
 header{
   padding-top: 10px;
-  padding-bottom: 10px;
+
 
   .navbar-light .navbar-toggler{
     outline: none;
-    border-color: #ffffff;
     cursor: pointer;
     font-size: 0.8rem;
     span{
@@ -13,31 +12,30 @@ header{
   }
 
   .navbar{
-    text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.4);
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
     width: 100%;
     background: none;
-    border-bottom: 1px solid #ffffff;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
     padding-bottom: 20px;
     a{
       text-decoration: none;
       padding-bottom: 15px;
     }
     .navbar-nav a:hover{
-      border-bottom: 2px solid #ffffff;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
     }
     .navbar-nav .active a{
       padding-top: 10px;
     }
     p.site-title{
-      font: 400 1.5rem/1.5rem $mont;
-      text-transform: capitalize;
-      padding: 0 0 10px;
+      font: 400 0.8rem/1.2rem $mont;
+      text-transform: uppercase;
+      padding: 0;
       display: block;
-      width: 100%;
+      width: 85%;
       text-align: center;
-      &:hover{
-        color: #ffffff;
-      }
     }
     ul{
       display: flex;
@@ -55,10 +53,13 @@ header{
     }
   }
   .description-front{
-    margin-top: 300px;
+    margin-top: 50px;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+    p.custom-logo{
+      margin-bottom: 20px;
+    }
     .site-description{
       margin-bottom: 15px;
       display: block;
@@ -66,19 +67,19 @@ header{
     }
     .page-title{
       margin-bottom: 15px;
-      font: 700 2rem/2rem $mont;
+      font: 700 1.3rem/2rem $mont;
     }
     .phone-wrapper{
       font: 600 1rem/1rem $mont;
       margin-bottom: 25px;
       margin-top: 15px;
-      li{
-        margin-bottom: 10px;
-        &:before{
-          content: "\f098"; /* FontAwesome Unicode */
-          font-family: FontAwesome;
-          margin-right: 15px;
-        }
+      a{
+        text-decoration: none;
+      }
+      &:before{
+        content: "\f098"; /* FontAwesome Unicode */
+        font-family: FontAwesome;
+        margin-right: 15px;
       }
     }
   }
@@ -99,20 +100,27 @@ header{
       flex-wrap: wrap;
       border-bottom: none;
       padding-bottom: 40px;
+      p.site-title {
+        font: 400 1.5rem/1.5rem $mont;
+        text-align: center;
+        width: 100%;
+      }
       ul{
         width: 100%;
         border-top: 1px solid #ffffff;
       }
       .navbar-nav .active{
         padding-top: 10px;
-        border-top: 4px solid #ffffff;
+        border-top-width: 4px;
+        border-top-style: solid;
         border-bottom: 0;
       }
     }
     .description-front{
       .page-title{
+        width: 100%;
         margin-bottom: 15px;
-        font: 700 4rem/4rem $mont;
+        font: 700 2.5rem/2.8rem $mont;
       }
       .phone-wrapper{
         font: 600 1.6rem/1.6rem $mont;

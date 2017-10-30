@@ -63,37 +63,35 @@ a {
   cursor: pointer; }
 
 header {
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-top: 10px; }
   header .navbar-light .navbar-toggler {
     outline: none;
-    border-color: #ffffff;
     cursor: pointer;
     font-size: 0.8rem; }
     header .navbar-light .navbar-toggler span {
       color: #ffffff; }
   header .navbar {
-    text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.4);
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
     width: 100%;
     background: none;
-    border-bottom: 1px solid #ffffff;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
     padding-bottom: 20px; }
     header .navbar a {
       text-decoration: none;
       padding-bottom: 15px; }
     header .navbar .navbar-nav a:hover {
-      border-bottom: 2px solid #ffffff; }
+      border-bottom-width: 2px;
+      border-bottom-style: solid; }
     header .navbar .navbar-nav .active a {
       padding-top: 10px; }
     header .navbar p.site-title {
-      font: 400 1.5rem/1.5rem Montserrat;
-      text-transform: capitalize;
-      padding: 0 0 10px;
+      font: 400 0.8rem/1.2rem Montserrat;
+      text-transform: uppercase;
+      padding: 0;
       display: block;
-      width: 100%;
+      width: 85%;
       text-align: center; }
-      header .navbar p.site-title:hover {
-        color: #ffffff; }
     header .navbar ul {
       display: -webkit-box;
       display: -webkit-flex;
@@ -113,28 +111,30 @@ header {
       font: 600 1.1rem/1.1rem Montserrat;
       text-transform: uppercase; }
   header .description-front {
-    margin-top: 300px;
+    margin-top: 50px;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.2); }
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1); }
+    header .description-front p.custom-logo {
+      margin-bottom: 20px; }
     header .description-front .site-description {
       margin-bottom: 15px;
       display: block;
       font: 700 1.4rem/1.1rem Montserrat; }
     header .description-front .page-title {
       margin-bottom: 15px;
-      font: 700 2rem/2rem Montserrat; }
+      font: 700 1.3rem/2rem Montserrat; }
     header .description-front .phone-wrapper {
       font: 600 1rem/1rem Montserrat;
       margin-bottom: 25px;
       margin-top: 15px; }
-      header .description-front .phone-wrapper li {
-        margin-bottom: 10px; }
-        header .description-front .phone-wrapper li:before {
-          content: "\f098";
-          /* FontAwesome Unicode */
-          font-family: FontAwesome;
-          margin-right: 15px; }
+      header .description-front .phone-wrapper a {
+        text-decoration: none; }
+      header .description-front .phone-wrapper:before {
+        content: "\f098";
+        /* FontAwesome Unicode */
+        font-family: FontAwesome;
+        margin-right: 15px; }
 
 .front-header {
   min-height: 480px; }
@@ -152,16 +152,22 @@ header {
             flex-wrap: wrap;
     border-bottom: none;
     padding-bottom: 40px; }
+    header .navbar p.site-title {
+      font: 400 1.5rem/1.5rem Montserrat;
+      text-align: center;
+      width: 100%; }
     header .navbar ul {
       width: 100%;
       border-top: 1px solid #ffffff; }
     header .navbar .navbar-nav .active {
       padding-top: 10px;
-      border-top: 4px solid #ffffff;
+      border-top-width: 4px;
+      border-top-style: solid;
       border-bottom: 0; }
   header .description-front .page-title {
+    width: 100%;
     margin-bottom: 15px;
-    font: 700 4rem/4rem Montserrat; }
+    font: 700 2.5rem/2.8rem Montserrat; }
   header .description-front .phone-wrapper {
     font: 600 1.6rem/1.6rem Montserrat;
     margin-bottom: 25px; }
@@ -170,9 +176,6 @@ header {
     text-transform: capitalize;
     margin-bottom: 30px;
     padding: 0 0 10px; } }
-
-body {
-  background: #e7eaea; }
 
 .site-main {
   padding-top: 40px;
@@ -292,17 +295,37 @@ footer {
     font-family: FontAwesome;
     margin-left: -15px; }
 
-.contact-list-phone .phone-item:before {
-  content: "\f098";
-  /* FontAwesome Unicode */
-  font-family: FontAwesome;
-  margin-right: 2px; }
+.contact-list-phone .phone-item {
+  -webkit-transition: ease all 0.3s;
+  transition: ease all 0.3s; }
+  .contact-list-phone .phone-item a {
+    text-decoration: none;
+    color: inherit; }
+  .contact-list-phone .phone-item:before {
+    content: "\f098";
+    /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    margin-right: 2px; }
 
-.contact-list-phone .mail-item:before {
-  content: "\f0e0";
-  /* FontAwesome Unicode */
-  font-family: FontAwesome;
-  margin-right: 2px; }
+.contact-list-phone .mail-item {
+  -webkit-transition: ease all 0.3s;
+  transition: ease all 0.3s; }
+  .contact-list-phone .mail-item a {
+    text-decoration: none;
+    color: inherit; }
+  .contact-list-phone .mail-item:before {
+    content: "\f0e0";
+    /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    margin-right: 2px; }
+
+.contact-list-phone .phone-item:hover, .contact-list-phone .mail-item:hover {
+  -ms-transform: scale(1.1);
+  /* IE 9 */
+  -webkit-transform: scale(1.1);
+  /* Safari */
+  transform: scale(1.1);
+  /* Standard syntax */ }
 
 .site-footer {
   color: #666666;
@@ -338,6 +361,8 @@ footer {
 .cases-list li {
   margin-bottom: 20px;
   padding: 15px 0; }
+  .cases-list li .cases-date {
+    margin-top: 10px; }
   .cases-list li .circumstances {
     font-weight: 600;
     font-size: 1.1rem;
@@ -349,22 +374,21 @@ footer {
   position: relative;
   margin-bottom: 20px; }
   .cases-list .post-publish-date span {
-    border-bottom: 3px solid #cbd4d6;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
     line-height: 1.5rem;
     font-weight: 600;
-    padding-bottom: 8px;
-    color: #40809b; }
+    padding-bottom: 8px; }
   .cases-list .post-publish-date:before {
     position: absolute;
     width: 100%;
     content: "";
     bottom: -5px;
-    border-top: 1px solid #cbd4d6; }
+    border-top-width: 1px;
+    border-top-style: solid; }
 
 .cases-list .cases-item .cases-wrap h3 {
   font: 500 1.3rem/1.4rem Montserrat; }
-  .cases-list .cases-item .cases-wrap h3 a {
-    color: #729190; }
 
 .cases-list .cases-item .cases-wrap p {
   font: 500 1rem/1.1rem Montserrat; }
@@ -502,6 +526,26 @@ h2.comments-title {
   font: 400 0.8rem/1rem Montserrat;
   margin-top: 10px;
   margin-bottom: 10px; }
+
+div.comment-metadata {
+  display: none; }
+
+li.comment {
+  margin-top: 10px;
+  font-size: 1.1rem; }
+
+div.reply {
+  margin-top: 10px; }
+
+div.comment-author {
+  display: inline-block;
+  font: 600 1.2rem/1.2rem Montserrat; }
+  div.comment-author img {
+    display: none; }
+
+div.comment-content {
+  margin-top: 5px;
+  margin-bottom: 5px; }
 
 .search-result-header h2 a {
   text-decoration: none;

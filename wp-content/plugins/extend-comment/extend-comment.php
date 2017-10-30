@@ -59,7 +59,9 @@ function extend_comment_custom_fields() {
 /**
  *
  *Saving data to front-end
+ *
  */
+
 add_action( 'comment_post', 'save_extend_comment_meta_data' );
 function save_extend_comment_meta_data( $comment_id ){
 

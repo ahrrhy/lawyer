@@ -14,7 +14,9 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area <?php global $post;
+                                                $post_slug=$post->post_name;
+                                                echo $post_slug; ?>">
 		<main id="main" class="site-main container-fluid <?php if (is_page('price')){ echo 'price'; } ?>" role="main">
 
             <div class="container">

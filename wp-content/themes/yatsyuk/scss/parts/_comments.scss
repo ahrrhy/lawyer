@@ -76,9 +76,27 @@ h2.comments-title{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-
-
+div.comment-metadata{
+  display: none;
+}
+li.comment{
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+div.reply{
+  margin-top: 10px;
+}
+div.comment-author{
+  img{
+    display: none;
+  }
+  display: inline-block;
+  font: 600 1.2rem/1.2rem $mont;
+}
+div.comment-content{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 //**************Search Results*******************//
 
 .search-result-header{
@@ -93,3 +111,5 @@ h1.page-title{
   text-transform: uppercase;
   text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.2);
 }
+
+//*************************COMMENTS ON

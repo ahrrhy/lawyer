@@ -21,7 +21,9 @@
 
 get_header(); ?>
 
-    <div id="primary" class="content-area container-fluid">
+    <div id="primary" class="content-area container-fluid <?php global $post;
+                                                                        $post_slug=$post->post_name;
+                                                                        echo $post_slug; ?>">
         <div class="container">
             <div class="row">
 
